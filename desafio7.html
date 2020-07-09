@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso JS</title>
+</head>
+<body>
+    <button class='botao'>Clique aqui</button>
+    <div class='box'></div>
+    <script>
+        var body = document.querySelector('body');
+
+        var botao = document.querySelector('.botao');
+        botao.addEventListener('click', mostraQuadrado);
+        
+
+
+        function mostraQuadrado() {
+            var novoQuadrado = document.createElement('div');
+            novoQuadrado.style.height = '100px';
+            novoQuadrado.style.width = '100px';
+            novoQuadrado.style.backgroundColor = '#f00';
+
+            novoQuadrado.addEventListener('mouseover', function(){
+                novoQuadrado.style.backgroundColor = newColor;
+            })
+
+            var newColor = getRandomColor();// #E943F0
+            console.log(newColor);
+            
+            body.appendChild(novoQuadrado);
+
+        }
+        
+        
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+    </script>
+</body>
+</html>
+   
